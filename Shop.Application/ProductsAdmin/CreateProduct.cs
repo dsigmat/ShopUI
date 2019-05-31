@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Shop.Application.ProductsAdmin
 {
+    //commit
     public class CreateProduct
     {
         private readonly ApplicationDbContext _context;
