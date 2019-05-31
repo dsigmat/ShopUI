@@ -1,0 +1,40 @@
+﻿@page
+@model Shop.UI.Pages.Admin.IndexModel
+@{
+}
+
+<div id="app" class="container">
+    @*<button v-on:click="getProducts">Get Products</button>*@
+    <div class="row">
+        <form>
+            <div class="form-row">
+                <div class="col">
+                    <input v-model="productModel.name" class="form-control" />
+                </div>
+                <div class="col">
+                    <input v-model="productModel.description" class="form-control" />
+                </div>
+                <div class="col">
+                    <input v-model="productModel.value" class="form-control" />
+                </div>
+                <div class="col">
+                    <button @@click="createProduct" v-if="!productModel.id" class="btn btn-outline-primary">Create Product</button>
+                    <button @@click="updateProduct" v-else class="btn btn-outline-primary">Update Product</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <br />
+
+    <div>
+        <p v-for="(product, index) in products">
+            {{product.id}} - {{product.name}} - {{product.description}} - € {{product.value}}
+            <button @@click="editProduct(product.id, index)" class="btn btn-outline-primary">Edit</button>
+            <button @@click="deleteProduct(product.id, index)" class="btn btn-outline-primary">Remove</button>
+        </p>
+    </div>
+
+
+
+</div>
+
